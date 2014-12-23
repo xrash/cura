@@ -1,0 +1,11 @@
+{
+    "name": "xrash/cura",
+    "description": "Dead simple PHP debugger.",
+    "autoload": {
+        "psr-0": { "": "src/" },
+        "files": [ "src/shortcuts.php" ]
+    },
+    "require": {
+        "php": ">=5.3.3"
+    }
+}
