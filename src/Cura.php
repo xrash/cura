@@ -2,13 +2,20 @@
 
 class Cura
 {
-    public static function backtrace()
+    public static function backtrace($trace)
     {
-        $frames = debug_backtrace(0);
-        $output = array();
-        $i = count($frames);
+        if (!$trace) {
+            $trace = debug_backtrace();
+        }
 
-        foreach ($frames as $frame) {
+        if ($trace instanceof \Exception) {
+            $trace = $trace->getTrace();
+        }
+
+        $output = array();
+        $i = count($trace);
+
+        foreach ($trace as $frame) {
             $output[] = sprintf('%d. %s', $i--, self::where($frame));
             $output[] = sprintf('  %s', self::who($frame));
         }

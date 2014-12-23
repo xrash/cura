@@ -1,27 +1,27 @@
 <?php
 
-function b()
+function b($trace)
 {
-    echo Cura::backtrace();
+    echo Cura::backtrace($trace);
 }
 
-function wb()
+function wb($trace)
 {
     echo '<pre>';
-    echo Cura::backtrace();
+    echo Cura::backtrace($trace);
     echo '</pre>';
 }
 
-function be()
+function be($trace)
 {
-    echo Cura::backtrace();
+    echo Cura::backtrace($trace);
     exit;
 }
 
-function wbe()
+function wbe($trace)
 {
     echo '<pre>';
-    echo Cura::backtrace();
+    echo Cura::backtrace($trace);
     echo '</pre>';
     exit;
 }
